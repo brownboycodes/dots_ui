@@ -25,7 +25,7 @@ const Cursor = () => {
         width: "16pt",
         height: "16pt",
         backgroundColor: "grey",
-        opacity: 0.5,
+        opacity: 0.3,
         border: "2px solid black",
         borderRadius: "50%",
         pointerEvents: "none", // makes sure it doesn’t block clicks

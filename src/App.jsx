@@ -55,13 +55,13 @@ const App = () => {
   // Ref for the popup element to handle clicks outside of it.
   const popupRef = useRef(null);
   const [hoveredId, setHoveredId] = useState(null);
-  const tabs = [
-    { name: "All", key: "all" },
-    { name: "Files", key: FileModel.type, icon: AttachmentIcon },
-    { name: "People", key: UserModel.type, icon: PersonIcon },
-    { name: "Chats", key: ChatModel.type, icon: ChatIcon },
-    { name: "Lists", key: FolderModel.type, icon: ListIcon },
-  ];
+  const [tabs, setTabs] = useState([
+    { name: "All", key: "all", active: true },
+    { name: "Files", key: FileModel.type, icon: AttachmentIcon, active: true },
+    { name: "People", key: UserModel.type, icon: PersonIcon, active: true },
+    { name: "Chats", key: ChatModel.type, icon: ChatIcon, active: true },
+    { name: "Lists", key: FolderModel.type, icon: ListIcon, active: true },
+  ]);
 
   const handleMouseLeave = () => {
     setHoveredId(null);
@@ -94,6 +94,14 @@ const App = () => {
     setShowOverlay(!showOverlay);
   };
 
+  const handleSettingsMenuToggle = (key) => {
+    setTabs((prevTabs) =>
+      prevTabs.map((tab) =>
+        tab.key === key ? { ...tab, active: !tab.active } : tab
+      )
+    );
+  };
+
   // Loading state
   if (loading) {
     return <div>Loading data...</div>;
@@ -109,7 +117,7 @@ const App = () => {
           <input
             type="text"
             style={searchInputStyle}
-            placeholder="Search..."
+            placeholder="Searching is easier"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
@@ -125,20 +133,22 @@ const App = () => {
         {/* Tabs and Settings */}
         <div style={headerStyle}>
           <div style={tabsStyle}>
-            {tabs.map((tab) => (
-              <div
-                key={tab.key}
-                onClick={() => setActiveTab(tab.key)}
-                style={{
-                  ...tabStyle,
-                  ...(activeTab === tab.key ? tabActiveStyle : {}),
-                }}
-              >
-                {tab.icon && <tab.icon style={tabIconStyle} />}
-                <span>{tab.name}</span>
-                <span style={tabCountStyle}>{getCount(tab.key)}</span>
-              </div>
-            ))}
+            {tabs
+              .filter((tab) => tab.active)
+              .map((tab) => (
+                <div
+                  key={tab.key}
+                  onClick={() => setActiveTab(tab.key)}
+                  style={{
+                    ...tabStyle,
+                    ...(activeTab === tab.key ? tabActiveStyle : {}),
+                  }}
+                >
+                  {tab.icon && <tab.icon style={tabIconStyle} />}
+                  <span>{tab.name}</span>
+                  <span style={tabCountStyle}>{getCount(tab.key)}</span>
+                </div>
+              ))}
           </div>
           <div onClick={handleToggleOverlay}>
             <SettingsIcon
@@ -150,22 +160,24 @@ const App = () => {
             <div className="overlay">
               <div className="popup" ref={popupRef}>
                 <div className="popup-content">
-                  {tabs.map((tab) => (
-                    <div className="popup-item">
-                      <div className="popup-item-label">
-                        {tab.icon && <tab.icon style={tabIconStyle} />}
-                        <span>{tab.name}</span>
+                  {tabs
+                    .filter((tab) => tab.key !== "all")
+                    .map((tab) => (
+                      <div className="popup-item" key={tab.key}>
+                        <div className="popup-item-label">
+                          {tab.icon && <tab.icon style={tabIconStyle} />}
+                          <span>{tab.name}</span>
+                        </div>
+                        <label className="toggle-switch">
+                          <input
+                            type="checkbox"
+                            checked={tab.active}
+                            onChange={() => handleSettingsMenuToggle(tab.key)}
+                          />
+                          <span className="slider"></span>
+                        </label>
                       </div>
-                      <label className="toggle-switch">
-                        <input
-                          type="checkbox"
-                          defaultChecked
-                          onSubmit={() => setActiveTab(tab.key)}
-                        />
-                        <span className="slider"></span>
-                      </label>
-                    </div>
-                  ))}
+                    ))}
                 </div>
               </div>
             </div>
@@ -278,7 +290,7 @@ const containerStyle = {
 
 const cardStyle = {
   width: "100%",
-  maxWidth: "40rem",
+  maxWidth: "50rem",
   backgroundColor: "#ffffff",
   borderRadius: "1.5rem",
   // padding: "1.5rem",
@@ -299,7 +311,7 @@ const searchContainerStyle = {
 
 const searchInputStyle = {
   width: "100%",
-  padding: "0.75rem 1rem 0.75rem 2.5rem",
+  padding: "0.75rem 0 0.75rem 2.5rem",
   // backgroundColor: "#f5f5f5",
   color: "#171717",
   borderRadius: "1rem",
@@ -312,7 +324,7 @@ const searchInputStyle = {
 
 const searchIconStyle = {
   position: "absolute",
-  left: "0.75rem",
+  // left: "0.75rem",
   color: "#a3a3a3",
   width: "1.25rem",
   height: "1.25rem",

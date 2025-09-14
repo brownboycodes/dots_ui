@@ -53,7 +53,7 @@
   padding: 1.5rem;
   border-radius: 1rem;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  min-width: 300px;
+  min-width: 200px;
   position: relative;
   border: 1px solid #ccc;
 }
@@ -68,7 +68,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 0;
+  /* padding: 0.5rem 0; */
 }
 
 .popup-item:last-child {
