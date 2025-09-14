@@ -19,7 +19,10 @@ class ChatModel extends BaseModel {
     this.onlineStatus = onlineStatus;
     this.lastSeen = lastSeen;
     this.accountStatus = accountStatus;
+    this.type = "chat";
   }
+
+  static type = "chat";
 
   static fromJson(json) {
     const {

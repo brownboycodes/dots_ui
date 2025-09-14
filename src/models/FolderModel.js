@@ -8,7 +8,10 @@ class FolderModel extends BaseModel {
     this.path = path;
     this.dateAdded = dateAdded;
     this.lastEdited = lastEdited;
+    this.type = "folder";
   }
+
+  static type = "folder";
 
   static fromJson(json) {
     const { id, name, fileCount, path, dateAdded, lastEdited } = json;

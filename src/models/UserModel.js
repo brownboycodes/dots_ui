@@ -15,7 +15,10 @@ class UserModel extends BaseModel {
     this.onlineStatus = onlineStatus;
     this.lastSeen = lastSeen;
     this.accountStatus = accountStatus;
+    this.type = "user";
   }
+
+  static type = "user";
 
   static fromJson(json) {
     const { id, name, profilePicture, onlineStatus, lastSeen, accountStatus } =

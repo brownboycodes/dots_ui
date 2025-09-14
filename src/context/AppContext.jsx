@@ -1,5 +1,5 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
-import * as dataService from '../services/dataService';
+import React, { createContext, useContext, useState, useEffect } from "react";
+import * as dataService from "../services/dataService";
 
 const AppContext = createContext();
 
@@ -9,39 +9,38 @@ export const useAppContext = () => {
 
 export const AppProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState('all');
-  const [searchQuery, setSearchQuery] = useState('');
+  const [activeTab, setActiveTab] = useState("all");
+  const [searchQuery, setSearchQuery] = useState("");
   const [data, setData] = useState({
     users: [],
     files: [],
     folders: [],
-    chats: []
+    chats: [],
   });
   const [filteredData, setFilteredData] = useState({
     users: [],
     files: [],
     folders: [],
-    chats: []
+    chats: [],
   });
 
-  // Load data on component mount
   useEffect(() => {
     const loadData = async () => {
       try {
         const loadedData = await dataService.loadAllData();
+
         setData(loadedData);
         setFilteredData(loadedData); // Initialize filtered data with all data
       } catch (error) {
-        console.error('Failed to load data:', error);
+        console.error("Failed to load data:", error);
       } finally {
         setLoading(false);
       }
     };
 
     loadData();
-  }, []);
+  }, [loading]);
 
-  // Filter data based on search query and active tab
   useEffect(() => {
     if (!searchQuery.trim()) {
       setFilteredData(data);
@@ -49,32 +48,44 @@ export const AppProvider = ({ children }) => {
     }
 
     const query = searchQuery.toLowerCase();
-    const filterItems = (items) => 
-      items.filter(item => 
-        item.name.toLowerCase().includes(query) ||
-        (item.email && item.email.toLowerCase().includes(query)) ||
-        (item.lastMessage && item.lastMessage.toLowerCase().includes(query))
+    const filterItems = (items) =>
+      items.filter(
+        (item) =>
+          item.name.toLowerCase().includes(query) ||
+          (item.email && item.email.toLowerCase().includes(query)) ||
+          (item.lastMessage && item.lastMessage.toLowerCase().includes(query))
       );
 
     setFilteredData({
       users: filterItems(data.users),
       files: filterItems(data.files),
       folders: filterItems(data.folders),
-      chats: filterItems(data.chats)
+      chats: filterItems(data.chats),
     });
   }, [searchQuery, data]);
 
-  // Get data for current tab
   const getCurrentData = () => {
-    if (activeTab === 'all') {
+    if (activeTab === "all") {
       return [
         ...filteredData.users,
         ...filteredData.files,
         ...filteredData.folders,
-        ...filteredData.chats
+        ...filteredData.chats,
       ];
     }
     return filteredData[`${activeTab}s`] || [];
+  };
+
+  const getCount = (type) => {
+    if (type === "all") {
+      return (
+        filteredData.users.length +
+        filteredData.files.length +
+        filteredData.folders.length +
+        filteredData.chats.length
+      );
+    }
+    return (filteredData[`${type}s`] || []).length;
   };
 
   const value = {
@@ -83,8 +94,9 @@ export const AppProvider = ({ children }) => {
     setActiveTab,
     searchQuery,
     setSearchQuery,
-    data: getCurrentData(),
-    getDataByType: (type) => filteredData[`${type}s`] || []
+    filteredData: getCurrentData(),
+    getDataByType: (type) => filteredData[`${type}s`] || [],
+    getCount,
   };
 
   return (

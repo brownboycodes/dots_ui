@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-// import { ReactComponent as YourSvg } from "./assets/images/image-svgrepo-com.svg";
 import ImageIcon from "./assets/images/image-svgrepo-com.svg?react";
 import SettingsIcon from "./assets/images/settings-icon.svg?react";
 import AttachmentIcon from "./assets/images/file-icon.svg?react";
@@ -11,6 +10,13 @@ import FolderItemIcon from "./assets/images/folder-item.svg?react";
 import "./App.css";
 import QuickAccess from "./components/QuickAccess";
 import ItemOptions from "./components/ItemOptions";
+import { useAppContext } from "./context/AppContext";
+import UserModel from "./models/UserModel";
+import FileModel from "./models/FileModel";
+import FolderModel from "./models/FolderModel";
+import ChatModel from "./models/ChatModel";
+import { getDateTime } from "./utils/DateTimeFormatter";
+import ShimmerEffect from "./components/ShimmerLoader";
 
 // Inline SVGs for the icons
 const SearchIcon = ({ className }) => (
@@ -31,87 +37,33 @@ const SearchIcon = ({ className }) => (
   </svg>
 );
 
-const mockData = [
-  {
-    id: 1,
-    type: "person",
-    name: "Randall Johnsson",
-    status: "Active now",
-    image: "https://placehold.co/40x40/f43f5e/ffffff?text=RJ",
-    isActive: true,
-  },
-  {
-    id: 2,
-    type: "folder",
-    name: "Random Michal Folder",
-    count: 12,
-    lastEdited: "Edited 12m ago",
-  },
-  {
-    id: 3,
-    type: "file",
-    name: "crative_file_frandkies.jpg",
-    location: "in Photos/Assets",
-    lastEdited: "Edited 12m ago",
-  },
-  {
-    id: 4,
-    type: "person",
-    name: "Kristinge Karand",
-    status: "Active 2d ago",
-    image: "https://placehold.co/40x40/4f46e5/ffffff?text=KK",
-    isActive: false,
-  },
-  {
-    id: 5,
-    type: "file",
-    name: "files_krande_michelle.avi",
-    location: "in Videos",
-    lastEdited: "Added 12m ago",
-  },
-];
-
-// Main App component
 const App = () => {
-  const [searchTerm, setSearchTerm] = useState("Rand");
-  const [activeTab, setActiveTab] = useState("all");
-  const [filteredResults, setFilteredResults] = useState([]);
-
-  // Tabs data
-  const tabs = [
-    { name: "All", key: "all" },
-    { name: "Files", key: "files", icon: AttachmentIcon },
-    { name: "People", key: "people", icon: PersonIcon },
-    { name: "Chats", key: "chats", icon: ChatIcon },
-    { name: "Lists", key: "lists", icon: ListIcon },
-  ];
-
-  // Logic to filter the mock data
-  useEffect(() => {
-    const filterData = () => {
-      let tempResults = mockData.filter((item) =>
-        item.name.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-
-      if (activeTab === "files") {
-        tempResults = tempResults.filter((item) => item.type == "file");
-      } else if (activeTab === "people") {
-        tempResults = tempResults.filter((item) => item.type === "person");
-      }
-
-      setFilteredResults(tempResults);
-    };
-
-    filterData();
-  }, [searchTerm, activeTab]);
+  // Get data and state from context
+  const {
+    activeTab,
+    setActiveTab,
+    searchQuery,
+    setSearchQuery,
+    filteredData,
+    loading,
+    getCount,
+  } = useAppContext();
 
   // State to control the visibility of the popup overlay.
   const [showOverlay, setShowOverlay] = useState(false);
   // Ref for the popup element to handle clicks outside of it.
   const popupRef = useRef(null);
+  const [hoveredId, setHoveredId] = useState(null);
+  const tabs = [
+    { name: "All", key: "all" },
+    { name: "Files", key: FileModel.type, icon: AttachmentIcon },
+    { name: "People", key: UserModel.type, icon: PersonIcon },
+    { name: "Chats", key: ChatModel.type, icon: ChatIcon },
+    { name: "Lists", key: FolderModel.type, icon: ListIcon },
+  ];
 
-  const handleToggleOverlay = () => {
-    setShowOverlay(!showOverlay);
+  const handleMouseLeave = () => {
+    setHoveredId(null);
   };
 
   useEffect(() => {
@@ -133,15 +85,18 @@ const App = () => {
     };
   }, [showOverlay]);
 
-  const [hoveredId, setHoveredId] = useState(null);
-
   const handleMouseEnter = (id) => {
     setHoveredId(id);
   };
 
-  const handleMouseLeave = () => {
-    setHoveredId(null);
+  const handleToggleOverlay = () => {
+    setShowOverlay(!showOverlay);
   };
+
+  // Loading state
+  if (loading) {
+    return <div>Loading data...</div>;
+  }
 
   return (
     <div style={containerStyle}>
@@ -153,13 +108,13 @@ const App = () => {
             type="text"
             style={searchInputStyle}
             placeholder="Search..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
           />
-          {searchTerm.trim().length == 0 ? (
+          {searchQuery.trim().length == 0 ? (
             <QuickAccess />
           ) : (
-            <button onClick={() => setSearchTerm("")} style={clearBtnStyle}>
+            <button onClick={() => setSearchQuery("")} style={clearBtnStyle}>
               Clear
             </button>
           )}
@@ -179,16 +134,7 @@ const App = () => {
               >
                 {tab.icon && <tab.icon style={tabIconStyle} />}
                 <span>{tab.name}</span>
-                <span style={tabCountStyle}>
-                  {
-                    filteredResults.filter(
-                      (item) =>
-                        tab.key === "all" ||
-                        (tab.key === "files" && item.type !== "person") ||
-                        (tab.key === "people" && item.type === "person")
-                    ).length
-                  }
-                </span>
+                <span style={tabCountStyle}>{getCount(tab.key)}</span>
               </div>
             ))}
           </div>
@@ -209,7 +155,11 @@ const App = () => {
                         <span>{tab.name}</span>
                       </div>
                       <label className="toggle-switch">
-                        <input type="checkbox" defaultChecked />
+                        <input
+                          type="checkbox"
+                          defaultChecked
+                          onSubmit={() => setActiveTab(tab.key)}
+                        />
                         <span className="slider"></span>
                       </label>
                     </div>
@@ -222,7 +172,7 @@ const App = () => {
 
         {/* Results List */}
         <div style={resultsListStyle}>
-          {filteredResults.map((item, index) => (
+          {(filteredData || []).map((item, index) => (
             <div
               key={item.id}
               style={{
@@ -234,9 +184,7 @@ const App = () => {
                 transition: "background-color 0.2s ease-in-out",
                 cursor: "pointer",
                 borderBottom:
-                  index != filteredResults.length - 1
-                    ? "2px solid #f1f1f1"
-                    : null,
+                  index != filteredData.length - 1 ? "2px solid #f1f1f1" : null,
                 backgroundColor:
                   hoveredId === item.id ? "#f5f5f5" : "transparent",
               }}
@@ -245,10 +193,10 @@ const App = () => {
             >
               {/* Profile/File Icon Section */}
               <div style={itemIconContainerStyle}>
-                {item.type === "person" && (
+                {(item.type === "user" || item.type === "chat") && (
                   <>
                     <img
-                      src={item.image}
+                      src={item.profilePicture}
                       alt={item.name}
                       style={personImageStyle}
                     />
@@ -264,14 +212,20 @@ const App = () => {
                 )}
                 {item.type === "folder" && (
                   <div
-                    style={{ ...itemIconBackgroundStyle, ...folderIconBgStyle }}
+                    style={{
+                      ...itemIconBackgroundStyle,
+                      ...folderIconBgStyle,
+                    }}
                   >
                     <FolderItemIcon style={itemIconStyle} />
                   </div>
                 )}
                 {item.type === "file" && (
                   <div
-                    style={{ ...itemIconBackgroundStyle, ...fileIconBgStyle }}
+                    style={{
+                      ...itemIconBackgroundStyle,
+                      ...fileIconBgStyle,
+                    }}
                   >
                     <FileItemIcon style={itemIconStyle} />
                   </div>
@@ -282,10 +236,15 @@ const App = () => {
               <div style={itemDetailsStyle}>
                 <div style={itemNameStyle}>{item.name}</div>
                 <div style={itemMetaStyle}>
-                  {item.type === "person" && item.status}
-                  {item.type === "folder" && `${item.count} Files`}
-                  {item.type === "file" &&
-                    `${item.location} • ${item.lastEdited}`}
+                  {item.type === UserModel.type &&
+                    `Active ${getDateTime(item.lastSeen)}`}
+                  {item.type === FolderModel.type && `${item.fileCount} Files`}
+                  {item.type === FileModel.type &&
+                    `${item.path} • ${getDateTime(item.lastEdited)}`}
+                  {item.type === ChatModel.type &&
+                    `${item.lastMessage} • ${getDateTime(
+                      item.lastMessageTime
+                    )}`}
                 </div>
               </div>
               {hoveredId === item.id && <ItemOptions />}
@@ -293,14 +252,7 @@ const App = () => {
           ))}
 
           {/* Placeholder/Loading Skeleton */}
-          {filteredResults.length === 0 && (
-            <div style={skeletonLoaderStyle}>
-              <div style={skeletonLineStyle}></div>
-              <div
-                style={{ ...skeletonLineStyle, ...skeletonShortStyle }}
-              ></div>
-            </div>
-          )}
+          {(filteredData || []).length === 0 && <ShimmerEffect />}
         </div>
       </div>
     </div>
@@ -372,6 +324,7 @@ const clearBtnStyle = {
   fontSize: 24,
   transition: "color 0.2s ease-in-out",
   textDecoration: "underline",
+  outline: "none",
 };
 
 const headerStyle = {
@@ -451,7 +404,7 @@ const itemIconStyle = {
 const personImageStyle = {
   width: "100%",
   height: "100%",
-  borderRadius: "9999px",
+  // borderRadius: "9999px",
   objectFit: "cover",
 };
 
@@ -488,8 +441,8 @@ const fileIconBgStyle = {
 };
 
 const folderIconBgStyle = {
-  backgroundColor: "#e0f2fe",
-  color: "#0ea5e9",
+  backgroundColor: "#f5f5f5",
+  color: "#737373",
 };
 
 const itemDetailsStyle = {
@@ -505,23 +458,4 @@ const itemNameStyle = {
 const itemMetaStyle = {
   fontSize: "0.75rem",
   color: "#737373",
-};
-
-const skeletonLoaderStyle = {
-  animation: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-  display: "flex",
-  flexDirection: "column",
-  gap: "1rem",
-  padding: "0.75rem 1rem",
-  borderRadius: "0.75rem",
-};
-
-const skeletonLineStyle = {
-  height: "2.5rem",
-  backgroundColor: "#f5f5f5",
-  borderRadius: "0.75rem",
-};
-
-const skeletonShortStyle = {
-  width: "66.666667%",
 };

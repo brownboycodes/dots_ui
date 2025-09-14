@@ -804,5 +804,227 @@
       "dateAdded": "2023-10-26T09:45:00.000Z",
       "lastEdited": "2023-10-26T09:50:00.000Z"
     }
+  ],
+  "chats": [
+    {
+      "id": 1,
+      "name": "Alex Johnson",
+      "profilePicture": "https://avatar.iran.liara.run/public/1",
+      "lastMessage": "Hey, how are you?",
+      "lastMessageTime": "2025-09-14T15:00:00Z",
+      "onlineStatus": "online",
+      "lastSeen": null,
+      "accountStatus": "active",
+      "type": "chat"
+    },
+    {
+      "id": 2,
+      "name": "Sarah Lee",
+      "profilePicture": "https://avatar.iran.liara.run/public/2",
+      "lastMessage": "Thanks for the help!",
+      "lastMessageTime": "2025-09-14T14:45:00Z",
+      "onlineStatus": "offline",
+      "lastSeen": "2025-09-14T14:46:00Z",
+      "accountStatus": "active",
+      "type": "chat"
+    },
+    {
+      "id": 3,
+      "name": "Michael Chen",
+      "profilePicture": "https://avatar.iran.liara.run/public/3",
+      "lastMessage": "See you tomorrow!",
+      "lastMessageTime": "2025-09-14T14:30:00Z",
+      "onlineStatus": "online",
+      "lastSeen": null,
+      "accountStatus": "active",
+      "type": "chat"
+    },
+    {
+      "id": 4,
+      "name": "Jessica Williams",
+      "profilePicture": "https://avatar.iran.liara.run/public/4",
+      "lastMessage": "The meeting is at 2 PM.",
+      "lastMessageTime": "2025-09-14T14:00:00Z",
+      "onlineStatus": "offline",
+      "lastSeen": "2025-09-14T14:01:00Z",
+      "accountStatus": "active",
+      "type": "chat"
+    },
+    {
+      "id": 5,
+      "name": "James Rodriguez",
+      "profilePicture": "https://avatar.iran.liara.run/public/5",
+      "lastMessage": "Can you send the file?",
+      "lastMessageTime": "2025-09-14T13:45:00Z",
+      "onlineStatus": "online",
+      "lastSeen": null,
+      "accountStatus": "active",
+      "type": "chat"
+    },
+    {
+      "id": 6,
+      "name": "Emily Davis",
+      "profilePicture": "https://avatar.iran.liara.run/public/6",
+      "lastMessage": "Got it, thanks!",
+      "lastMessageTime": "2025-09-14T13:30:00Z",
+      "onlineStatus": "offline",
+      "lastSeen": "2025-09-14T13:31:00Z",
+      "accountStatus": "active",
+      "type": "chat"
+    },
+    {
+      "id": 7,
+      "name": "Robert Miller",
+      "profilePicture": "https://avatar.iran.liara.run/public/7",
+      "lastMessage": "Let's grab lunch soon.",
+      "lastMessageTime": "2025-09-14T13:00:00Z",
+      "onlineStatus": "online",
+      "lastSeen": null,
+      "accountStatus": "active",
+      "type": "chat"
+    },
+    {
+      "id": 8,
+      "name": "Linda Wilson",
+      "profilePicture": "https://avatar.iran.liara.run/public/8",
+      "lastMessage": "I'll be there in 5.",
+      "lastMessageTime": "2025-09-14T12:45:00Z",
+      "onlineStatus": "offline",
+      "lastSeen": "2025-09-14T12:46:00Z",
+      "accountStatus": "active",
+      "type": "chat"
+    },
+    {
+      "id": 9,
+      "name": "William Martinez",
+      "profilePicture": "https://avatar.iran.liara.run/public/9",
+      "lastMessage": "What's the plan for tonight?",
+      "lastMessageTime": "2025-09-14T12:30:00Z",
+      "onlineStatus": "online",
+      "lastSeen": null,
+      "accountStatus": "active",
+      "type": "chat"
+    },
+    {
+      "id": 10,
+      "name": "Jennifer Moore",
+      "profilePicture": "https://avatar.iran.liara.run/public/10",
+      "lastMessage": "Sounds good to me!",
+      "lastMessageTime": "2025-09-14T12:00:00Z",
+      "onlineStatus": "offline",
+      "lastSeen": "2025-09-14T12:01:00Z",
+      "accountStatus": "active",
+      "type": "chat"
+    },
+    {
+      "id": 11,
+      "name": "David Thomas",
+      "profilePicture": "https://avatar.iran.liara.run/public/11",
+      "lastMessage": "Let's reschedule.",
+      "lastMessageTime": "2025-09-14T11:45:00Z",
+      "onlineStatus": "online",
+      "lastSeen": null,
+      "accountStatus": "active",
+      "type": "chat"
+    },
+    {
+      "id": 12,
+      "name": "Elizabeth Garcia",
+      "profilePicture": "https://avatar.iran.liara.run/public/12",
+      "lastMessage": "Can you call me?",
+      "lastMessageTime": "2025-09-14T11:30:00Z",
+      "onlineStatus": "offline",
+      "lastSeen": "2025-09-14T11:31:00Z",
+      "accountStatus": "active",
+      "type": "chat"
+    },
+    {
+      "id": 13,
+      "name": "Charles Clark",
+      "profilePicture": "https://avatar.iran.liara.run/public/13",
+      "lastMessage": "I have a question about the project.",
+      "lastMessageTime": "2025-09-14T11:00:00Z",
+      "onlineStatus": "online",
+      "lastSeen": null,
+      "accountStatus": "active",
+      "type": "chat"
+    },
+    {
+      "id": 14,
+      "name": "Patricia Hall",
+      "profilePicture": "https://avatar.iran.liara.run/public/14",
+      "lastMessage": "No problem!",
+      "lastMessageTime": "2025-09-14T10:45:00Z",
+      "onlineStatus": "offline",
+      "lastSeen": "2025-09-14T10:46:00Z",
+      "accountStatus": "active",
+      "type": "chat"
+    },
+    {
+      "id": 15,
+      "name": "Joseph White",
+      "profilePicture": "https://avatar.iran.liara.run/public/15",
+      "lastMessage": "See you at the event.",
+      "lastMessageTime": "2025-09-14T10:30:00Z",
+      "onlineStatus": "online",
+      "lastSeen": null,
+      "accountStatus": "active",
+      "type": "chat"
+    },
+    {
+      "id": 16,
+      "name": "Maria Hernandez",
+      "profilePicture": "https://avatar.iran.liara.run/public/16",
+      "lastMessage": "I sent the email.",
+      "lastMessageTime": "2025-09-14T10:00:00Z",
+      "onlineStatus": "offline",
+      "lastSeen": "2025-09-14T10:01:00Z",
+      "accountStatus": "active",
+      "type": "chat"
+    },
+    {
+      "id": 17,
+      "name": "Daniel King",
+      "profilePicture": "https://avatar.iran.liara.run/public/17",
+      "lastMessage": "Did you get my message?",
+      "lastMessageTime": "2025-09-14T09:45:00Z",
+      "onlineStatus": "online",
+      "lastSeen": null,
+      "accountStatus": "active",
+      "type": "chat"
+    },
+    {
+      "id": 18,
+      "name": "Susan Wright",
+      "profilePicture": "https://avatar.iran.liara.run/public/18",
+      "lastMessage": "I'm running a bit late.",
+      "lastMessageTime": "2025-09-14T09:30:00Z",
+      "onlineStatus": "offline",
+      "lastSeen": "2025-09-14T09:31:00Z",
+      "accountStatus": "active",
+      "type": "chat"
+    },
+    {
+      "id": 19,
+      "name": "Mark Scott",
+      "profilePicture": "https://avatar.iran.liara.run/public/19",
+      "lastMessage": "Let me know when you're free.",
+      "lastMessageTime": "2025-09-14T09:00:00Z",
+      "onlineStatus": "online",
+      "lastSeen": null,
+      "accountStatus": "active",
+      "type": "chat"
+    },
+    {
+      "id": 20,
+      "name": "Nancy Green",
+      "profilePicture": "https://avatar.iran.liara.run/public/20",
+      "lastMessage": "Talk to you later.",
+      "lastMessageTime": "2025-09-14T08:45:00Z",
+      "onlineStatus": "offline",
+      "lastSeen": "2025-09-14T08:46:00Z",
+      "accountStatus": "active",
+      "type": "chat"
+    }
   ]
 }

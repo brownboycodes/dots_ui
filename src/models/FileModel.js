@@ -8,7 +8,10 @@ class FileModel extends BaseModel {
     this.dateAdded = dateAdded;
     this.lastEdited = lastEdited;
     this.path = path;
+    this.type = "file";
   }
+
+  static type = "file";
 
   static fromJson(json) {
     const { id, name, fileType, dateAdded, lastEdited, path } = json;
