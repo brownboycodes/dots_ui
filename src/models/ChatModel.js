@@ -44,3 +44,5 @@ class ChatModel extends BaseModel {
     });
   }
 }
+
+export default ChatModel;

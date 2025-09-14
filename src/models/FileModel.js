@@ -22,3 +22,5 @@ class FileModel extends BaseModel {
     });
   }
 }
+
+export default FileModel;

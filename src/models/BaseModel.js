@@ -6,3 +6,5 @@ class BaseModel {
     this.id = id;
   }
 }
+
+export default BaseModel;

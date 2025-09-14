@@ -30,3 +30,5 @@ class UserModel extends BaseModel {
     });
   }
 }
+
+export default UserModel;

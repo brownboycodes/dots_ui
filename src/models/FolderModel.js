@@ -22,3 +22,5 @@ class FolderModel extends BaseModel {
     });
   }
 }
+
+export default FolderModel;
