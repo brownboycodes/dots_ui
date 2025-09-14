@@ -17,6 +17,7 @@ import FolderModel from "./models/FolderModel";
 import ChatModel from "./models/ChatModel";
 import { getDateTime } from "./utils/DateTimeFormatter";
 import ShimmerEffect from "./components/ShimmerLoader";
+import Cursor from "./components/Cursor";
 
 // Inline SVGs for the icons
 const SearchIcon = ({ className }) => (
@@ -100,6 +101,7 @@ const App = () => {
 
   return (
     <div style={containerStyle}>
+      <Cursor />
       <div style={cardStyle}>
         {/* Search Bar */}
         <div style={searchContainerStyle}>
@@ -182,7 +184,7 @@ const App = () => {
                 padding: "0.75rem 1rem",
                 // borderRadius: "0.75rem",
                 transition: "background-color 0.2s ease-in-out",
-                cursor: "pointer",
+                cursor: "none",
                 borderBottom:
                   index != filteredData.length - 1 ? "2px solid #f1f1f1" : null,
                 backgroundColor:
@@ -271,6 +273,7 @@ const containerStyle = {
   backgroundColor: "#f5f5f5",
   fontFamily: "Inter, sans-serif",
   minWidth: "100vw",
+  cursor: "none",
 };
 
 const cardStyle = {
@@ -278,7 +281,7 @@ const cardStyle = {
   maxWidth: "40rem",
   backgroundColor: "#ffffff",
   borderRadius: "1.5rem",
-  padding: "1.5rem",
+  // padding: "1.5rem",
   boxShadow:
     "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
   border: "1px solid #e5e5e5",
@@ -291,6 +294,7 @@ const searchContainerStyle = {
   alignItems: "center",
   justifyContent: "space-between",
   marginBottom: "1.5rem",
+  padding: "1.5rem 1.5rem 0",
 };
 
 const searchInputStyle = {
@@ -303,6 +307,7 @@ const searchInputStyle = {
   outline: "none",
   transition: "all 0.2s ease-in-out",
   fontSize: 42,
+  cursor: "none",
 };
 
 const searchIconStyle = {
@@ -333,8 +338,9 @@ const headerStyle = {
   justifyContent: "space-between",
   // paddingBottom: "0.75rem",
   marginBottom: "1.5rem",
-  borderBottom: "2px solid #e5e5e5",
+  borderBottom: "1.8px solid #e5e5e5",
   position: "relative",
+  padding: "0 1.5rem 0",
 };
 
 const tabsStyle = {
@@ -346,12 +352,12 @@ const tabStyle = {
   display: "flex",
   alignItems: "center",
   gap: "0.5rem",
-  cursor: "pointer",
   paddingBottom: "0.75rem",
   transition: "all 0.3s ease-in-out",
   color: "#737373",
   zIndex: 1,
   bottom: 0,
+  cursor: "none",
 };
 
 const tabActiveStyle = {
@@ -384,7 +390,7 @@ const settingsIconStyle = {
 const resultsListStyle = {
   display: "flex",
   flexDirection: "column",
-  gap: "1rem",
+  padding: "0 0 1.5rem",
 };
 
 const itemIconContainerStyle = {

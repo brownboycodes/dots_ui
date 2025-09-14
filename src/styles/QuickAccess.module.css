@@ -34,7 +34,7 @@
   /* border: 1px solid #e5e7eb; */
   /* max-width: 400px; */
   width: fit-content;
-  cursor: pointer;
+  cursor: none;
   transition: all 0.2s ease-in-out;
 }
 
