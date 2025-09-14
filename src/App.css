@@ -1,0 +1,147 @@
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+} */
+
+.overlay {
+  position: absolute;
+  top: calc(100% + 20px);
+  right: 0;
+  z-index: 1000;
+}
+
+.popup {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  min-width: 300px;
+  position: relative;
+  border: 1px solid #ccc;
+}
+
+.popup-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.popup-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+}
+
+.popup-item:last-child {
+  border-bottom: none;
+}
+
+.popup-item-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1rem;
+  color: #374151;
+}
+
+.icon-svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #6b7280;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #060606;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.icon-svg {
+  width: 32px;
+  height: 32px;
+  color: #b7b7b7;
+  transition: transform 0.5s ease-in-out;
+  stroke: #b7b7b7;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}

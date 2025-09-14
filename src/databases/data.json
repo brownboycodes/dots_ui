@@ -1,0 +1,808 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Alex Baker",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:00:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 2,
+      "name": "Anna Carter",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "offline",
+      "lastSeen": "2023-10-26T11:45:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 3,
+      "name": "Adam Davis",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T11:50:00.000Z",
+      "accountStatus": "inactive"
+    },
+    {
+      "id": 4,
+      "name": "Brian Evans",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:05:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 5,
+      "name": "Betty Ford",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "offline",
+      "lastSeen": "2023-10-26T11:55:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 6,
+      "name": "Ben Green",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T11:40:00.000Z",
+      "accountStatus": "inactive"
+    },
+    {
+      "id": 7,
+      "name": "Cathy Hill",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:02:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 8,
+      "name": "Charles Ivy",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "offline",
+      "lastSeen": "2023-10-26T11:35:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 9,
+      "name": "Cindy Jones",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T11:58:00.000Z",
+      "accountStatus": "inactive"
+    },
+    {
+      "id": 10,
+      "name": "David King",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:01:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 11,
+      "name": "Diana Lee",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "offline",
+      "lastSeen": "2023-10-26T11:30:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 12,
+      "name": "Daniel Miller",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T11:55:00.000Z",
+      "accountStatus": "inactive"
+    },
+    {
+      "id": 13,
+      "name": "Edward Nelson",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:03:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 14,
+      "name": "Emily Owens",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "offline",
+      "lastSeen": "2023-10-26T11:25:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 15,
+      "name": "Eric Parker",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T11:48:00.000Z",
+      "accountStatus": "inactive"
+    },
+    {
+      "id": 16,
+      "name": "Frank Quinn",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:06:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 17,
+      "name": "Fiona Roberts",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "offline",
+      "lastSeen": "2023-10-26T11:20:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 18,
+      "name": "Fred Smith",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T11:52:00.000Z",
+      "accountStatus": "inactive"
+    },
+    {
+      "id": 19,
+      "name": "Gary Taylor",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:08:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 20,
+      "name": "Grace Underwood",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "offline",
+      "lastSeen": "2023-10-26T11:15:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 21,
+      "name": "George Vance",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T11:49:00.000Z",
+      "accountStatus": "inactive"
+    },
+    {
+      "id": 22,
+      "name": "Harry White",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:10:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 23,
+      "name": "Helen Young",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "offline",
+      "lastSeen": "2023-10-26T11:10:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 24,
+      "name": "Henry Zell",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T11:51:00.000Z",
+      "accountStatus": "inactive"
+    },
+    {
+      "id": 25,
+      "name": "Irene Adams",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:11:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 26,
+      "name": "Ian Brown",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "offline",
+      "lastSeen": "2023-10-26T11:05:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 27,
+      "name": "Isaac Clark",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T11:53:00.000Z",
+      "accountStatus": "inactive"
+    },
+    {
+      "id": 28,
+      "name": "James Davis",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:12:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 29,
+      "name": "Jane Evans",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "offline",
+      "lastSeen": "2023-10-26T11:00:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 30,
+      "name": "Jim Ford",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T11:56:00.000Z",
+      "accountStatus": "inactive"
+    },
+    {
+      "id": 31,
+      "name": "Kevin Green",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:13:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 32,
+      "name": "Kim Harris",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "offline",
+      "lastSeen": "2023-10-26T10:55:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 33,
+      "name": "Kyle Hill",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T11:58:00.000Z",
+      "accountStatus": "inactive"
+    },
+    {
+      "id": 34,
+      "name": "Laura Johnson",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:14:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 35,
+      "name": "Liam Kelly",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "offline",
+      "lastSeen": "2023-10-26T10:50:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 36,
+      "name": "Lisa Lee",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:00:00.000Z",
+      "accountStatus": "inactive"
+    },
+    {
+      "id": 37,
+      "name": "Mark Miller",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:15:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 38,
+      "name": "Mary Moore",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "offline",
+      "lastSeen": "2023-10-26T10:45:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 39,
+      "name": "Mike Nash",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:02:00.000Z",
+      "accountStatus": "inactive"
+    },
+    {
+      "id": 40,
+      "name": "Nancy Olson",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:16:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 41,
+      "name": "Nick Page",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "offline",
+      "lastSeen": "2023-10-26T10:40:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 42,
+      "name": "Nicole Quinn",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:04:00.000Z",
+      "accountStatus": "inactive"
+    },
+    {
+      "id": 43,
+      "name": "Olivia Rose",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:17:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 44,
+      "name": "Oliver Scott",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "offline",
+      "lastSeen": "2023-10-26T10:35:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 45,
+      "name": "Owen Thomas",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:06:00.000Z",
+      "accountStatus": "inactive"
+    },
+    {
+      "id": 46,
+      "name": "Patrick Turner",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:18:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 47,
+      "name": "Pauline Underwood",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "offline",
+      "lastSeen": "2023-10-26T10:30:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 48,
+      "name": "Peter Vance",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:08:00.000Z",
+      "accountStatus": "inactive"
+    },
+    {
+      "id": 49,
+      "name": "Quincy Wilson",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:19:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 50,
+      "name": "Quinn White",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "offline",
+      "lastSeen": "2023-10-26T10:25:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 51,
+      "name": "Quentin Xavier",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:10:00.000Z",
+      "accountStatus": "inactive"
+    },
+    {
+      "id": 52,
+      "name": "Robert Young",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:20:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 53,
+      "name": "Ruth Zell",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "offline",
+      "lastSeen": "2023-10-26T10:20:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 54,
+      "name": "Richard Adams",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:12:00.000Z",
+      "accountStatus": "inactive"
+    },
+    {
+      "id": 55,
+      "name": "Steve Brown",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:21:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 56,
+      "name": "Susan Clark",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "offline",
+      "lastSeen": "2023-10-26T10:15:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 57,
+      "name": "Sam Davis",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:14:00.000Z",
+      "accountStatus": "inactive"
+    },
+    {
+      "id": 58,
+      "name": "Tom Evans",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:22:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 59,
+      "name": "Tina Ford",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "offline",
+      "lastSeen": "2023-10-26T10:10:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 60,
+      "name": "Tim Green",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:16:00.000Z",
+      "accountStatus": "inactive"
+    },
+    {
+      "id": 61,
+      "name": "Ursula Harris",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:23:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 62,
+      "name": "Umar Johnson",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "offline",
+      "lastSeen": "2023-10-26T10:05:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 63,
+      "name": "Ulysses King",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:18:00.000Z",
+      "accountStatus": "inactive"
+    },
+    {
+      "id": 64,
+      "name": "Victor Lee",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:24:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 65,
+      "name": "Vivian Miller",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "offline",
+      "lastSeen": "2023-10-26T10:00:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 66,
+      "name": "Vince Moore",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:20:00.000Z",
+      "accountStatus": "inactive"
+    },
+    {
+      "id": 67,
+      "name": "Willard Nelson",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:25:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 68,
+      "name": "Wendy Owens",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "offline",
+      "lastSeen": "2023-10-26T09:55:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 69,
+      "name": "Walter Parker",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:22:00.000Z",
+      "accountStatus": "inactive"
+    },
+    {
+      "id": 70,
+      "name": "Xavier Quinn",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:26:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 71,
+      "name": "Xena Roberts",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "offline",
+      "lastSeen": "2023-10-26T09:50:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 72,
+      "name": "Xander Smith",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:24:00.000Z",
+      "accountStatus": "inactive"
+    },
+    {
+      "id": 73,
+      "name": "Yasmine Taylor",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:27:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 74,
+      "name": "Yuri Underwood",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "offline",
+      "lastSeen": "2023-10-26T09:45:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 75,
+      "name": "Yvonne Vance",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:26:00.000Z",
+      "accountStatus": "inactive"
+    },
+    {
+      "id": 76,
+      "name": "Zack White",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:28:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 77,
+      "name": "Zara Young",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "offline",
+      "lastSeen": "2023-10-26T09:40:00.000Z",
+      "accountStatus": "active"
+    },
+    {
+      "id": 78,
+      "name": "Zane Zell",
+      "profilePicture": "https://avatar.iran.liara.run/public",
+      "onlineStatus": "online",
+      "lastSeen": "2023-10-26T12:27:00.000Z",
+      "accountStatus": "inactive"
+    }
+  ],
+  "files": [
+    {
+      "id": 1,
+      "name": "Document_1.docx",
+      "fileType": "document",
+      "dateAdded": "2023-10-26T12:00:00.000Z",
+      "lastEdited": "2023-10-26T12:05:00.000Z",
+      "path": "/documents/project_notes.docx"
+    },
+    {
+      "id": 2,
+      "name": "Document_2.pdf",
+      "fileType": "document",
+      "dateAdded": "2023-10-26T11:45:00.000Z",
+      "lastEdited": "2023-10-26T11:50:00.000Z",
+      "path": "/documents/report_final.pdf"
+    },
+    {
+      "id": 3,
+      "name": "Document_3.txt",
+      "fileType": "document",
+      "dateAdded": "2023-10-26T11:30:00.000Z",
+      "lastEdited": "2023-10-26T11:35:00.000Z",
+      "path": "/documents/readme.txt"
+    },
+    {
+      "id": 4,
+      "name": "Image_1.png",
+      "fileType": "image",
+      "dateAdded": "2023-10-26T12:10:00.000Z",
+      "lastEdited": "2023-10-26T12:15:00.000Z",
+      "path": "/images/screenshot.png"
+    },
+    {
+      "id": 5,
+      "name": "Image_2.jpg",
+      "fileType": "image",
+      "dateAdded": "2023-10-26T11:55:00.000Z",
+      "lastEdited": "2023-10-26T12:00:00.000Z",
+      "path": "/images/profile_pic.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Image_3.svg",
+      "fileType": "image",
+      "dateAdded": "2023-10-26T11:40:00.000Z",
+      "lastEdited": "2023-10-26T11:45:00.000Z",
+      "path": "/images/logo.svg"
+    },
+    {
+      "id": 7,
+      "name": "Video_1.mp4",
+      "fileType": "video",
+      "dateAdded": "2023-10-26T12:20:00.000Z",
+      "lastEdited": "2023-10-26T12:25:00.000Z",
+      "path": "/videos/presentation.mp4"
+    },
+    {
+      "id": 8,
+      "name": "Video_2.mov",
+      "fileType": "video",
+      "dateAdded": "2023-10-26T12:05:00.000Z",
+      "lastEdited": "2023-10-26T12:10:00.000Z",
+      "path": "/videos/highlights.mov"
+    },
+    {
+      "id": 9,
+      "name": "Video_3.avi",
+      "fileType": "video",
+      "dateAdded": "2023-10-26T11:50:00.000Z",
+      "lastEdited": "2023-10-26T11:55:00.000Z",
+      "path": "/videos/short_clip.avi"
+    },
+    {
+      "id": 10,
+      "name": "Audio_1.mp3",
+      "fileType": "audio",
+      "dateAdded": "2023-10-26T12:30:00.000Z",
+      "lastEdited": "2023-10-26T12:35:00.000Z",
+      "path": "/audio/song.mp3"
+    },
+    {
+      "id": 11,
+      "name": "Audio_2.wav",
+      "fileType": "audio",
+      "dateAdded": "2023-10-26T12:15:00.000Z",
+      "lastEdited": "2023-10-26T12:20:00.000Z",
+      "path": "/audio/sound_effect.wav"
+    },
+    {
+      "id": 12,
+      "name": "Audio_3.flac",
+      "fileType": "audio",
+      "dateAdded": "2023-10-26T12:00:00.000Z",
+      "lastEdited": "2023-10-26T12:05:00.000Z",
+      "path": "/audio/voice_memo.flac"
+    }
+  ],
+  "folders": [
+    {
+      "id": 101,
+      "name": "Project Documents",
+      "fileCount": 15,
+      "path": "/work/projects/docs",
+      "dateAdded": "2023-10-26T12:00:00.000Z",
+      "lastEdited": "2023-10-26T12:05:00.000Z"
+    },
+    {
+      "id": 102,
+      "name": "Family Photos",
+      "fileCount": 200,
+      "path": "/personal/photos/family",
+      "dateAdded": "2023-10-26T11:45:00.000Z",
+      "lastEdited": "2023-10-26T11:50:00.000Z"
+    },
+    {
+      "id": 103,
+      "name": "Work Videos",
+      "fileCount": 8,
+      "path": "/work/videos",
+      "dateAdded": "2023-10-26T11:30:00.000Z",
+      "lastEdited": "2023-10-26T11:35:00.000Z"
+    },
+    {
+      "id": 104,
+      "name": "Music Playlist",
+      "fileCount": 50,
+      "path": "/music/playlists",
+      "dateAdded": "2023-10-26T11:15:00.000Z",
+      "lastEdited": "2023-10-26T11:20:00.000Z"
+    },
+    {
+      "id": 105,
+      "name": "Design Assets",
+      "fileCount": 75,
+      "path": "/design/assets",
+      "dateAdded": "2023-10-26T11:00:00.000Z",
+      "lastEdited": "2023-10-26T11:05:00.000Z"
+    },
+    {
+      "id": 106,
+      "name": "Meeting Notes",
+      "fileCount": 30,
+      "path": "/work/meetings/notes",
+      "dateAdded": "2023-10-26T10:45:00.000Z",
+      "lastEdited": "2023-10-26T10:50:00.000Z"
+    },
+    {
+      "id": 107,
+      "name": "Travel Itinerary",
+      "fileCount": 5,
+      "path": "/personal/travel",
+      "dateAdded": "2023-10-26T10:30:00.000Z",
+      "lastEdited": "2023-10-26T10:35:00.000Z"
+    },
+    {
+      "id": 108,
+      "name": "Codebase",
+      "fileCount": 120,
+      "path": "/work/code",
+      "dateAdded": "2023-10-26T10:15:00.000Z",
+      "lastEdited": "2023-10-26T10:20:00.000Z"
+    },
+    {
+      "id": 109,
+      "name": "Financial Reports",
+      "fileCount": 25,
+      "path": "/finance/reports",
+      "dateAdded": "2023-10-26T10:00:00.000Z",
+      "lastEdited": "2023-10-26T10:05:00.000Z"
+    },
+    {
+      "id": 110,
+      "name": "Marketing Materials",
+      "fileCount": 40,
+      "path": "/marketing/materials",
+      "dateAdded": "2023-10-26T09:45:00.000Z",
+      "lastEdited": "2023-10-26T09:50:00.000Z"
+    }
+  ]
+}
