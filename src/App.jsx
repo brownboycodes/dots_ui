@@ -18,6 +18,7 @@ import ChatModel from "./models/ChatModel";
 import { getDateTime } from "./utils/DateTimeFormatter";
 import ShimmerEffect from "./components/ShimmerLoader";
 import Cursor from "./components/Cursor";
+import CircularProgressIndicator from "./components/CircularProgressIndicator";
 
 // Inline SVGs for the icons
 const SearchIcon = ({ className }) => (
@@ -113,7 +114,11 @@ const App = () => {
       <div style={cardStyle}>
         {/* Search Bar */}
         <div style={searchContainerStyle}>
-          <SearchIcon style={searchIconStyle} />
+          {loading ? (
+            <CircularProgressIndicator />
+          ) : (
+            <SearchIcon style={searchIconStyle} />
+          )}
           <input
             type="text"
             style={searchInputStyle}
