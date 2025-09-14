@@ -12,7 +12,8 @@ class FileModel extends BaseModel {
 
   static fromJson(json) {
     const { id, name, fileType, dateAdded, lastEdited, path } = json;
-    return new File({
+
+    return new FileModel({
       id,
       name,
       fileType,
