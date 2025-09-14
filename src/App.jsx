@@ -1,12 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
-import ImageIcon from "./assets/images/image-svgrepo-com.svg?react";
+
 import SettingsIcon from "./assets/images/settings-icon.svg?react";
 import AttachmentIcon from "./assets/images/file-icon.svg?react";
 import PersonIcon from "./assets/images/user-icon.svg?react";
 import ChatIcon from "./assets/images/chat-icon.svg?react";
 import ListIcon from "./assets/images/list-icon.svg?react";
-import FileItemIcon from "./assets/images/document-item.svg?react";
-import FolderItemIcon from "./assets/images/folder-item.svg?react";
+
 import "./App.css";
 import QuickAccess from "./components/QuickAccess";
 import ItemOptions from "./components/ItemOptions";
@@ -19,6 +18,13 @@ import { getDateTime } from "./utils/DateTimeFormatter";
 import ShimmerEffect from "./components/ShimmerLoader";
 import Cursor from "./components/Cursor";
 import CircularProgressIndicator from "./components/CircularProgressIndicator";
+import {
+  itemDetailsStyle,
+  itemIconContainerStyle,
+  itemMetaStyle,
+  itemNameStyle,
+} from "./styles/ItemStyles";
+import ListItem from "./components/ListItem";
 
 // Inline SVGs for the icons
 const SearchIcon = ({ className }) => (
@@ -226,85 +232,7 @@ const App = () => {
                   onMouseEnter={() => handleMouseEnter(item.id)}
                   onMouseLeave={handleMouseLeave}
                 >
-                  {/* Profile/File Icon Section */}
-                  <div style={itemIconContainerStyle}>
-                    {(item.type === "user" || item.type === "chat") && (
-                      <>
-                        <img
-                          src={item.profilePicture}
-                          alt={item.name}
-                          style={personImageStyle}
-                        />
-                        <div
-                          style={{
-                            ...statusDotStyle,
-                            ...(item.isActive
-                              ? statusActiveStyle
-                              : statusInactiveStyle),
-                          }}
-                        ></div>
-                      </>
-                    )}
-                    {item.type === "folder" && (
-                      <div
-                        style={{
-                          ...itemIconBackgroundStyle,
-                          ...folderIconBgStyle,
-                        }}
-                      >
-                        <FolderItemIcon style={itemIconStyle} />
-                      </div>
-                    )}
-                    {item.type === "file" && (
-                      <div
-                        style={{
-                          ...itemIconBackgroundStyle,
-                          ...fileIconBgStyle,
-                        }}
-                      >
-                        <FileItemIcon style={itemIconStyle} />
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Text Content Section */}
-                  <div style={itemDetailsStyle}>
-                    <div
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                      }}
-                    >
-                      <div style={itemNameStyle}>{item.name}</div>
-                      {item.type === FolderModel.type && (
-                        <span
-                          style={{
-                            fontSize: "0.75rem",
-                            color: "#737373",
-                            backgroundColor: "#f2f2f2",
-                            padding: "0 5px 0",
-                            margin: "0 5px 0",
-                            borderRadius: "6px",
-                          }}
-                        >
-                          {item.fileCount} Files
-                        </span>
-                      )}
-                    </div>
-
-                    <div style={itemMetaStyle}>
-                      {item.type === UserModel.type &&
-                        `Active ${getDateTime(item.lastSeen)}`}
-                      {item.type === FolderModel.type &&
-                        `in ${item.path} • ${getDateTime(item.lastEdited)}`}
-                      {item.type === FileModel.type &&
-                        `in ${item.path} • ${getDateTime(item.lastEdited)}`}
-                      {item.type === ChatModel.type &&
-                        `${item.lastMessage} • ${getDateTime(
-                          item.lastMessageTime
-                        )}`}
-                    </div>
-                  </div>
+                  <ListItem item={item} />
                   {hoveredId === item.id && <ItemOptions />}
                 </div>
               ))}
@@ -449,80 +377,4 @@ const resultsListStyle = {
   display: "flex",
   flexDirection: "column",
   padding: "0 0 1.5rem",
-};
-
-const itemIconContainerStyle = {
-  position: "relative",
-  width: "2.5rem",
-  height: "2.5rem",
-  flexShrink: 0,
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  borderRadius: "0.75rem",
-  // padding: 24,
-};
-
-const itemIconStyle = {
-  width: "0.75rem",
-  height: "0.75rem",
-};
-
-const personImageStyle = {
-  width: "100%",
-  height: "100%",
-  // borderRadius: "9999px",
-  objectFit: "cover",
-};
-
-const statusDotStyle = {
-  position: "absolute",
-  bottom: "0",
-  right: "0",
-  width: "0.75rem",
-  height: "0.75rem",
-  borderRadius: "9999px",
-  border: "2px solid white",
-};
-
-const statusActiveStyle = {
-  backgroundColor: "#22c55e",
-};
-
-const statusInactiveStyle = {
-  backgroundColor: "#facc15",
-};
-
-const itemIconBackgroundStyle = {
-  width: "100%",
-  height: "100%",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  borderRadius: "0.75rem",
-};
-
-const fileIconBgStyle = {
-  backgroundColor: "#f5f5f5",
-  color: "#737373",
-};
-
-const folderIconBgStyle = {
-  backgroundColor: "#f5f5f5",
-  color: "#737373",
-};
-
-const itemDetailsStyle = {
-  flex: "1",
-};
-
-const itemNameStyle = {
-  fontWeight: "600",
-  fontSize: "0.875rem",
-  color: "#171717",
-};
-
-const itemMetaStyle = {
-  fontSize: "0.75rem",
-  color: "#737373",
 };
