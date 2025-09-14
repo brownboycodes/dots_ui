@@ -135,166 +135,184 @@ const App = () => {
           )}
         </div>
 
-        {/* Tabs and Settings */}
-        <div style={headerStyle}>
-          <div style={tabsStyle}>
-            {tabs
-              .filter((tab) => tab.active)
-              .map((tab) => (
-                <div
-                  key={tab.key}
-                  onClick={() => setActiveTab(tab.key)}
-                  style={{
-                    ...tabStyle,
-                    ...(activeTab === tab.key ? tabActiveStyle : {}),
-                  }}
-                >
-                  {tab.icon && <tab.icon style={tabIconStyle} />}
-                  <span>{tab.name}</span>
-                  <span style={tabCountStyle}>{getCount(tab.key)}</span>
-                </div>
-              ))}
-          </div>
-          <div onClick={handleToggleOverlay}>
-            <SettingsIcon
-              style={settingsIconStyle}
-              className={`icon-svg ${showOverlay ? "rotate" : ""}`}
-            />
-          </div>
-          {showOverlay && (
-            <div className="overlay">
-              <div className="popup" ref={popupRef}>
-                <div className="popup-content">
-                  {tabs
-                    .filter((tab) => tab.key !== "all")
-                    .map((tab) => (
-                      <div className="popup-item" key={tab.key}>
-                        <div className="popup-item-label">
-                          {tab.icon && <tab.icon style={tabIconStyle} />}
-                          <span>{tab.name}</span>
-                        </div>
-                        <label className="toggle-switch">
-                          <input
-                            type="checkbox"
-                            checked={tab.active}
-                            onChange={() => handleSettingsMenuToggle(tab.key)}
-                          />
-                          <span className="slider"></span>
-                        </label>
-                      </div>
-                    ))}
-                </div>
+        <div
+          style={{
+            maxHeight: searchQuery.trim().length > 0 ? "fit-content" : "0",
+            opacity: searchQuery.trim().length > 0 ? "1" : "0",
+            transition: "max-height 0.5s ease-in-out, opacity 0.3s ease-in-out",
+            overflow: "hidden",
+          }}
+          className="w-full flex flex-col items-center gap-4"
+        >
+          {/* Tabs and Settings */}
+          {searchQuery.trim().length > 0 && (
+            <div style={headerStyle}>
+              <div style={tabsStyle}>
+                {tabs
+                  .filter((tab) => tab.active)
+                  .map((tab) => (
+                    <div
+                      key={tab.key}
+                      onClick={() => setActiveTab(tab.key)}
+                      style={{
+                        ...tabStyle,
+                        ...(activeTab === tab.key ? tabActiveStyle : {}),
+                      }}
+                    >
+                      {tab.icon && <tab.icon style={tabIconStyle} />}
+                      <span>{tab.name}</span>
+                      <span style={tabCountStyle}>{getCount(tab.key)}</span>
+                    </div>
+                  ))}
               </div>
+              <div onClick={handleToggleOverlay}>
+                <SettingsIcon
+                  style={settingsIconStyle}
+                  className={`icon-svg ${showOverlay ? "rotate" : ""}`}
+                />
+              </div>
+              {showOverlay && (
+                <div className="overlay">
+                  <div className="popup" ref={popupRef}>
+                    <div className="popup-content">
+                      {tabs
+                        .filter((tab) => tab.key !== "all")
+                        .map((tab) => (
+                          <div className="popup-item" key={tab.key}>
+                            <div className="popup-item-label">
+                              {tab.icon && <tab.icon style={tabIconStyle} />}
+                              <span>{tab.name}</span>
+                            </div>
+                            <label className="toggle-switch">
+                              <input
+                                type="checkbox"
+                                checked={tab.active}
+                                onChange={() =>
+                                  handleSettingsMenuToggle(tab.key)
+                                }
+                              />
+                              <span className="slider"></span>
+                            </label>
+                          </div>
+                        ))}
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           )}
-        </div>
 
-        {/* Results List */}
-        <div style={resultsListStyle}>
-          {(filteredData || []).map((item, index) => (
-            <div
-              key={`${item.type}_${item.id}`}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "1rem",
-                padding: "0.75rem 1rem",
-                // borderRadius: "0.75rem",
-                transition: "background-color 0.2s ease-in-out",
-                cursor: "none",
-                borderBottom:
-                  index != filteredData.length - 1 ? "2px solid #f1f1f1" : null,
-                backgroundColor:
-                  hoveredId === item.id ? "#f5f5f5" : "transparent",
-              }}
-              onMouseEnter={() => handleMouseEnter(item.id)}
-              onMouseLeave={handleMouseLeave}
-            >
-              {/* Profile/File Icon Section */}
-              <div style={itemIconContainerStyle}>
-                {(item.type === "user" || item.type === "chat") && (
-                  <>
-                    <img
-                      src={item.profilePicture}
-                      alt={item.name}
-                      style={personImageStyle}
-                    />
-                    <div
-                      style={{
-                        ...statusDotStyle,
-                        ...(item.isActive
-                          ? statusActiveStyle
-                          : statusInactiveStyle),
-                      }}
-                    ></div>
-                  </>
-                )}
-                {item.type === "folder" && (
-                  <div
-                    style={{
-                      ...itemIconBackgroundStyle,
-                      ...folderIconBgStyle,
-                    }}
-                  >
-                    <FolderItemIcon style={itemIconStyle} />
-                  </div>
-                )}
-                {item.type === "file" && (
-                  <div
-                    style={{
-                      ...itemIconBackgroundStyle,
-                      ...fileIconBgStyle,
-                    }}
-                  >
-                    <FileItemIcon style={itemIconStyle} />
-                  </div>
-                )}
-              </div>
-
-              {/* Text Content Section */}
-              <div style={itemDetailsStyle}>
+          {/* Results List */}
+          {searchQuery.trim().length > 0 && (
+            <div style={resultsListStyle}>
+              {(filteredData || []).map((item, index) => (
                 <div
+                  key={`${item.type}_${item.id}`}
                   style={{
                     display: "flex",
                     alignItems: "center",
+                    gap: "1rem",
+                    padding: "0.75rem 1rem",
+                    // borderRadius: "0.75rem",
+                    transition: "background-color 0.2s ease-in-out",
+                    cursor: "none",
+                    borderBottom:
+                      index != filteredData.length - 1
+                        ? "2px solid #f1f1f1"
+                        : null,
+                    backgroundColor:
+                      hoveredId === item.id ? "#f5f5f5" : "transparent",
                   }}
+                  onMouseEnter={() => handleMouseEnter(item.id)}
+                  onMouseLeave={handleMouseLeave}
                 >
-                  <div style={itemNameStyle}>{item.name}</div>
-                  {item.type === FolderModel.type && (
-                    <span
+                  {/* Profile/File Icon Section */}
+                  <div style={itemIconContainerStyle}>
+                    {(item.type === "user" || item.type === "chat") && (
+                      <>
+                        <img
+                          src={item.profilePicture}
+                          alt={item.name}
+                          style={personImageStyle}
+                        />
+                        <div
+                          style={{
+                            ...statusDotStyle,
+                            ...(item.isActive
+                              ? statusActiveStyle
+                              : statusInactiveStyle),
+                          }}
+                        ></div>
+                      </>
+                    )}
+                    {item.type === "folder" && (
+                      <div
+                        style={{
+                          ...itemIconBackgroundStyle,
+                          ...folderIconBgStyle,
+                        }}
+                      >
+                        <FolderItemIcon style={itemIconStyle} />
+                      </div>
+                    )}
+                    {item.type === "file" && (
+                      <div
+                        style={{
+                          ...itemIconBackgroundStyle,
+                          ...fileIconBgStyle,
+                        }}
+                      >
+                        <FileItemIcon style={itemIconStyle} />
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Text Content Section */}
+                  <div style={itemDetailsStyle}>
+                    <div
                       style={{
-                        fontSize: "0.75rem",
-                        color: "#737373",
-                        backgroundColor: "#f2f2f2",
-                        padding: "0 5px 0",
-                        margin: "0 5px 0",
-                        borderRadius: "6px",
+                        display: "flex",
+                        alignItems: "center",
                       }}
                     >
-                      {item.fileCount} Files
-                    </span>
-                  )}
-                </div>
+                      <div style={itemNameStyle}>{item.name}</div>
+                      {item.type === FolderModel.type && (
+                        <span
+                          style={{
+                            fontSize: "0.75rem",
+                            color: "#737373",
+                            backgroundColor: "#f2f2f2",
+                            padding: "0 5px 0",
+                            margin: "0 5px 0",
+                            borderRadius: "6px",
+                          }}
+                        >
+                          {item.fileCount} Files
+                        </span>
+                      )}
+                    </div>
 
-                <div style={itemMetaStyle}>
-                  {item.type === UserModel.type &&
-                    `Active ${getDateTime(item.lastSeen)}`}
-                  {item.type === FolderModel.type &&
-                    `in ${item.path} • ${getDateTime(item.lastEdited)}`}
-                  {item.type === FileModel.type &&
-                    `in ${item.path} • ${getDateTime(item.lastEdited)}`}
-                  {item.type === ChatModel.type &&
-                    `${item.lastMessage} • ${getDateTime(
-                      item.lastMessageTime
-                    )}`}
+                    <div style={itemMetaStyle}>
+                      {item.type === UserModel.type &&
+                        `Active ${getDateTime(item.lastSeen)}`}
+                      {item.type === FolderModel.type &&
+                        `in ${item.path} • ${getDateTime(item.lastEdited)}`}
+                      {item.type === FileModel.type &&
+                        `in ${item.path} • ${getDateTime(item.lastEdited)}`}
+                      {item.type === ChatModel.type &&
+                        `${item.lastMessage} • ${getDateTime(
+                          item.lastMessageTime
+                        )}`}
+                    </div>
+                  </div>
+                  {hoveredId === item.id && <ItemOptions />}
                 </div>
-              </div>
-              {hoveredId === item.id && <ItemOptions />}
+              ))}
+
+              {/* Placeholder/Loading Skeleton */}
+              {(filteredData || []).length === 0 && <ShimmerEffect />}
             </div>
-          ))}
-
-          {/* Placeholder/Loading Skeleton */}
-          {(filteredData || []).length === 0 && <ShimmerEffect />}
+          )}
         </div>
       </div>
     </div>
