@@ -632,7 +632,7 @@
       "fileType": "document",
       "dateAdded": "2023-10-26T12:00:00.000Z",
       "lastEdited": "2023-10-26T12:05:00.000Z",
-      "path": "/documents/project_notes.docx"
+      "path": "Documents/Project_Notes"
     },
     {
       "id": 2,
@@ -640,7 +640,7 @@
       "fileType": "document",
       "dateAdded": "2023-10-26T11:45:00.000Z",
       "lastEdited": "2023-10-26T11:50:00.000Z",
-      "path": "/documents/report_final.pdf"
+      "path": "Documents"
     },
     {
       "id": 3,
@@ -648,7 +648,7 @@
       "fileType": "document",
       "dateAdded": "2023-10-26T11:30:00.000Z",
       "lastEdited": "2023-10-26T11:35:00.000Z",
-      "path": "/documents/readme.txt"
+      "path": "Documents"
     },
     {
       "id": 4,
@@ -656,7 +656,7 @@
       "fileType": "image",
       "dateAdded": "2023-10-26T12:10:00.000Z",
       "lastEdited": "2023-10-26T12:15:00.000Z",
-      "path": "/images/screenshot.png"
+      "path": "Images"
     },
     {
       "id": 5,
@@ -664,7 +664,7 @@
       "fileType": "image",
       "dateAdded": "2023-10-26T11:55:00.000Z",
       "lastEdited": "2023-10-26T12:00:00.000Z",
-      "path": "/images/profile_pic.jpg"
+      "path": "Images"
     },
     {
       "id": 6,
@@ -672,7 +672,7 @@
       "fileType": "image",
       "dateAdded": "2023-10-26T11:40:00.000Z",
       "lastEdited": "2023-10-26T11:45:00.000Z",
-      "path": "/images/logo.svg"
+      "path": "Images"
     },
     {
       "id": 7,
@@ -680,7 +680,7 @@
       "fileType": "video",
       "dateAdded": "2023-10-26T12:20:00.000Z",
       "lastEdited": "2023-10-26T12:25:00.000Z",
-      "path": "/videos/presentation.mp4"
+      "path": "Videos"
     },
     {
       "id": 8,
@@ -688,7 +688,7 @@
       "fileType": "video",
       "dateAdded": "2023-10-26T12:05:00.000Z",
       "lastEdited": "2023-10-26T12:10:00.000Z",
-      "path": "/videos/highlights.mov"
+      "path": "Videos"
     },
     {
       "id": 9,
@@ -696,7 +696,7 @@
       "fileType": "video",
       "dateAdded": "2023-10-26T11:50:00.000Z",
       "lastEdited": "2023-10-26T11:55:00.000Z",
-      "path": "/videos/short_clip.avi"
+      "path": "Videos"
     },
     {
       "id": 10,
@@ -704,7 +704,7 @@
       "fileType": "audio",
       "dateAdded": "2023-10-26T12:30:00.000Z",
       "lastEdited": "2023-10-26T12:35:00.000Z",
-      "path": "/audio/song.mp3"
+      "path": "Music"
     },
     {
       "id": 11,
@@ -712,7 +712,7 @@
       "fileType": "audio",
       "dateAdded": "2023-10-26T12:15:00.000Z",
       "lastEdited": "2023-10-26T12:20:00.000Z",
-      "path": "/audio/sound_effect.wav"
+      "path": "Music"
     },
     {
       "id": 12,
@@ -720,7 +720,7 @@
       "fileType": "audio",
       "dateAdded": "2023-10-26T12:00:00.000Z",
       "lastEdited": "2023-10-26T12:05:00.000Z",
-      "path": "/audio/voice_memo.flac"
+      "path": "Music"
     }
   ],
   "folders": [

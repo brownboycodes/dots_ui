@@ -174,7 +174,7 @@ const App = () => {
         <div style={resultsListStyle}>
           {(filteredData || []).map((item, index) => (
             <div
-              key={item.id}
+              key={`${item.type}_${item.id}`}
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -240,7 +240,7 @@ const App = () => {
                     `Active ${getDateTime(item.lastSeen)}`}
                   {item.type === FolderModel.type && `${item.fileCount} Files`}
                   {item.type === FileModel.type &&
-                    `${item.path} • ${getDateTime(item.lastEdited)}`}
+                    `in ${item.path} • ${getDateTime(item.lastEdited)}`}
                   {item.type === ChatModel.type &&
                     `${item.lastMessage} • ${getDateTime(
                       item.lastMessageTime
@@ -368,8 +368,11 @@ const tabIconStyle = {
 
 const tabCountStyle = {
   color: "#a3a3a3",
-  fontWeight: "normal",
   fontSize: "0.75rem",
+  fontWeight: "600",
+  backgroundColor: "#f2f2f2",
+  padding: "1px 4px 1px",
+  borderRadius: "4px",
 };
 
 const settingsIconStyle = {
