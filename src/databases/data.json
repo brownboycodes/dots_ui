@@ -728,7 +728,7 @@
       "id": 101,
       "name": "Project Documents",
       "fileCount": 15,
-      "path": "/work/projects/docs",
+      "path": "Projects/Docs",
       "dateAdded": "2023-10-26T12:00:00.000Z",
       "lastEdited": "2023-10-26T12:05:00.000Z"
     },
@@ -736,7 +736,7 @@
       "id": 102,
       "name": "Family Photos",
       "fileCount": 200,
-      "path": "/personal/photos/family",
+      "path": "Photos/Family",
       "dateAdded": "2023-10-26T11:45:00.000Z",
       "lastEdited": "2023-10-26T11:50:00.000Z"
     },
@@ -744,7 +744,7 @@
       "id": 103,
       "name": "Work Videos",
       "fileCount": 8,
-      "path": "/work/videos",
+      "path": "Work/Videos",
       "dateAdded": "2023-10-26T11:30:00.000Z",
       "lastEdited": "2023-10-26T11:35:00.000Z"
     },
@@ -752,7 +752,7 @@
       "id": 104,
       "name": "Music Playlist",
       "fileCount": 50,
-      "path": "/music/playlists",
+      "path": "Music/Playlists",
       "dateAdded": "2023-10-26T11:15:00.000Z",
       "lastEdited": "2023-10-26T11:20:00.000Z"
     },
@@ -760,7 +760,7 @@
       "id": 105,
       "name": "Design Assets",
       "fileCount": 75,
-      "path": "/design/assets",
+      "path": "Design",
       "dateAdded": "2023-10-26T11:00:00.000Z",
       "lastEdited": "2023-10-26T11:05:00.000Z"
     },
@@ -768,7 +768,7 @@
       "id": 106,
       "name": "Meeting Notes",
       "fileCount": 30,
-      "path": "/work/meetings/notes",
+      "path": "Work",
       "dateAdded": "2023-10-26T10:45:00.000Z",
       "lastEdited": "2023-10-26T10:50:00.000Z"
     },
@@ -776,7 +776,7 @@
       "id": 107,
       "name": "Travel Itinerary",
       "fileCount": 5,
-      "path": "/personal/travel",
+      "path": "Personal/Travel",
       "dateAdded": "2023-10-26T10:30:00.000Z",
       "lastEdited": "2023-10-26T10:35:00.000Z"
     },
@@ -784,7 +784,7 @@
       "id": 108,
       "name": "Codebase",
       "fileCount": 120,
-      "path": "/work/code",
+      "path": "Work",
       "dateAdded": "2023-10-26T10:15:00.000Z",
       "lastEdited": "2023-10-26T10:20:00.000Z"
     },
@@ -792,7 +792,7 @@
       "id": 109,
       "name": "Financial Reports",
       "fileCount": 25,
-      "path": "/finance/reports",
+      "path": "Finance",
       "dateAdded": "2023-10-26T10:00:00.000Z",
       "lastEdited": "2023-10-26T10:05:00.000Z"
     },
@@ -800,7 +800,7 @@
       "id": 110,
       "name": "Marketing Materials",
       "fileCount": 40,
-      "path": "/marketing/materials",
+      "path": "Finance",
       "dateAdded": "2023-10-26T09:45:00.000Z",
       "lastEdited": "2023-10-26T09:50:00.000Z"
     }

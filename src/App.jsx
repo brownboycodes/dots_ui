@@ -248,11 +248,34 @@ const App = () => {
 
               {/* Text Content Section */}
               <div style={itemDetailsStyle}>
-                <div style={itemNameStyle}>{item.name}</div>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <div style={itemNameStyle}>{item.name}</div>
+                  {item.type === FolderModel.type && (
+                    <span
+                      style={{
+                        fontSize: "0.75rem",
+                        color: "#737373",
+                        backgroundColor: "#f2f2f2",
+                        padding: "0 5px 0",
+                        margin: "0 5px 0",
+                        borderRadius: "6px",
+                      }}
+                    >
+                      {item.fileCount} Files
+                    </span>
+                  )}
+                </div>
+
                 <div style={itemMetaStyle}>
                   {item.type === UserModel.type &&
                     `Active ${getDateTime(item.lastSeen)}`}
-                  {item.type === FolderModel.type && `${item.fileCount} Files`}
+                  {item.type === FolderModel.type &&
+                    `in ${item.path} • ${getDateTime(item.lastEdited)}`}
                   {item.type === FileModel.type &&
                     `in ${item.path} • ${getDateTime(item.lastEdited)}`}
                   {item.type === ChatModel.type &&
