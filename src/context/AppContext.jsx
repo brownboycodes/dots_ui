@@ -1,5 +1,13 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import * as dataService from "../services/dataService";
+import UserModel from "../models/UserModel";
+import FileModel from "../models/FileModel";
+import FolderModel from "../models/FolderModel";
+import ChatModel from "../models/ChatModel";
+import AttachmentIcon from "../assets/images/file-icon.svg?react";
+import PersonIcon from "../assets/images/user-icon.svg?react";
+import ChatIcon from "../assets/images/chat-icon.svg?react";
+import ListIcon from "../assets/images/list-icon.svg?react";
 
 const AppContext = createContext();
 
@@ -23,6 +31,14 @@ export const AppProvider = ({ children }) => {
     folders: [],
     chats: [],
   });
+
+  const [tabs, setTabs] = useState([
+    { name: "All", key: "all", active: true },
+    { name: "Files", key: FileModel.type, icon: AttachmentIcon, active: true },
+    { name: "People", key: UserModel.type, icon: PersonIcon, active: true },
+    { name: "Chats", key: ChatModel.type, icon: ChatIcon, active: true },
+    { name: "Lists", key: FolderModel.type, icon: ListIcon, active: true },
+  ]);
 
   useEffect(() => {
     const loadData = async () => {
@@ -88,6 +104,23 @@ export const AppProvider = ({ children }) => {
     return (filteredData[`${type}s`] || []).length;
   };
 
+  function getActiveStatusByKey(key) {
+    const foundItem = tabs.find((item) => item.key === key);
+    return foundItem ? foundItem.active : false;
+  }
+
+  function getUsersList() {
+    return getActiveStatusByKey(UserModel.type) ? data.users : [];
+  }
+  function getChatsList() {
+    return getActiveStatusByKey(ChatModel.type) ? data.chats : [];
+  }
+  function getFilesList() {
+    return getActiveStatusByKey(FileModel.type) ? data.files : [];
+  }
+  function getFoldersList() {
+    return getActiveStatusByKey(FolderModel.type) ? data.folders : [];
+  }
   const value = {
     loading,
     activeTab,
@@ -97,6 +130,8 @@ export const AppProvider = ({ children }) => {
     filteredData: getCurrentData(),
     getDataByType: (type) => filteredData[`${type}s`] || [],
     getCount,
+    tabs,
+    setTabs,
   };
 
   return (
