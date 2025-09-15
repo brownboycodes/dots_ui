@@ -8,8 +8,6 @@ import Folder from "./Folder";
 import User from "./User";
 
 function ListItem({ item }) {
-  console.log(`item iss => ${item}`);
-
   if (item.type == UserModel.type) {
     return <User item={item} />;
   } else if (item.type == ChatModel.type) {

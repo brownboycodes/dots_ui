@@ -16,6 +16,7 @@ import ShimmerEffect from "./components/ShimmerLoader";
 import Cursor from "./components/Cursor";
 import CircularProgressIndicator from "./components/CircularProgressIndicator";
 import ListItem from "./components/ListItem";
+import AnimatedCounter from "./components/AnimatedCounter";
 
 // Inline SVGs for the icons
 const SearchIcon = ({ className }) => (
@@ -158,7 +159,10 @@ const App = () => {
                     >
                       {tab.icon && <tab.icon style={tabIconStyle} />}
                       <span>{tab.name}</span>
-                      <span style={tabCountStyle}>{getCount(tab.key)}</span>
+                      <AnimatedCounter
+                        value={getCount(tab.key)}
+                        duration={1000}
+                      />
                     </div>
                   ))}
               </div>
@@ -356,15 +360,6 @@ const tabIconStyle = {
   width: "1.25rem",
   height: "1.25rem",
   color: "#f70474",
-};
-
-const tabCountStyle = {
-  color: "#a3a3a3",
-  fontSize: "0.75rem",
-  fontWeight: "600",
-  backgroundColor: "#f2f2f2",
-  padding: "1px 4px 1px",
-  borderRadius: "4px",
 };
 
 const settingsIconStyle = {
