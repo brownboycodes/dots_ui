@@ -54,7 +54,7 @@ function ItemOptions() {
           display: "flex",
           alignItems: "center",
           gap: "0.25rem",
-          cursor: "pointer",
+          cursor: "none",
         }}
       >
         <LinkIcon />
@@ -65,7 +65,7 @@ function ItemOptions() {
           display: "flex",
           alignItems: "center",
           gap: "0.25rem",
-          cursor: "pointer",
+          cursor: "none",
         }}
       >
         <NewTabIcon />

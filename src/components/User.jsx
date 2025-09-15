@@ -9,15 +9,16 @@ import {
   statusInactiveStyle,
 } from "../styles/ItemStyles";
 import { getDateTime } from "../utils/DateTimeFormatter";
+import UserAvatar from "./UserAvatar";
 
 function User({ item }) {
   return (
     <>
       {/* Profile/File Icon Section */}
       <div style={itemIconContainerStyle}>
-        <img
+        <UserAvatar
           src={item.profilePicture}
-          alt={item.name}
+          name={item.name}
           style={personImageStyle}
         />
         <div

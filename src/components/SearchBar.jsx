@@ -1,6 +1,7 @@
 import { useAppContext } from "../context/AppContext";
 import CircularProgressIndicator from "./CircularProgressIndicator";
 import QuickAccess from "./QuickAccess";
+import styles from "../styles/SearchBar.module.css";
 
 function SearchBar() {
   const { searchQuery, setSearchQuery, loading } = useAppContext();
@@ -14,7 +15,7 @@ function SearchBar() {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className={className}
+      className={`${className} ${styles.searchIcon}`}
       height={48}
       width={48}
     >
@@ -23,68 +24,20 @@ function SearchBar() {
     </svg>
   );
 
-  const searchContainerStyle = {
-    position: "relative",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    marginBottom: "1.5rem",
-    padding: "1.5rem 1.5rem 0",
-  };
-
-  const searchInputStyle = {
-    width: "100%",
-    padding: "0.75rem 0 0.75rem 2.5rem",
-    // backgroundColor: "#f5f5f5",
-    color: "#171717",
-    borderRadius: "1rem",
-    border: "none",
-    outline: "none",
-    transition: "all 0.2s ease-in-out",
-    fontSize: 42,
-    cursor: "none",
-  };
-
-  const searchIconStyle = {
-    position: "absolute",
-    // left: "0.75rem",
-    color: "#a3a3a3",
-    width: 36,
-    height: 36,
-  };
-
-  const clearBtnStyle = {
-    position: "absolute",
-    right: "0.75rem",
-    background: "none",
-    border: "none",
-    cursor: "pointer",
-    color: "#171717",
-    fontWeight: "500",
-    fontSize: 24,
-    transition: "color 0.2s ease-in-out",
-    textDecoration: "underline",
-    outline: "none",
-  };
-
   return (
-    <div style={searchContainerStyle}>
-      {loading ? (
-        <CircularProgressIndicator />
-      ) : (
-        <SearchIcon style={searchIconStyle} />
-      )}
+    <div className={styles.searchContainer}>
+      {loading ? <CircularProgressIndicator /> : <SearchIcon />}
       <input
         type="text"
-        style={searchInputStyle}
+        className={styles.searchInput}
         placeholder="Searching is easier"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
       />
-      {searchQuery.trim().length == 0 ? (
+      {searchQuery.trim().length === 0 ? (
         <QuickAccess />
       ) : (
-        <button onClick={() => setSearchQuery("")} style={clearBtnStyle}>
+        <button onClick={() => setSearchQuery("")} className={styles.clearBtn}>
           Clear
         </button>
       )}

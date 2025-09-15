@@ -80,8 +80,8 @@ const App = () => {
                 searchQuery.trim().length > 0 && (
                   <>
                     <div>
-                      {[...Array(3)].map(() => (
-                        <ShimmerEffect />
+                      {[...Array(3)].map((e, index) => (
+                        <ShimmerEffect key={index} />
                       ))}
                     </div>
                   </>

@@ -9,7 +9,8 @@ import {
 } from "../styles/ItemStyles";
 import { getDateTime } from "../utils/DateTimeFormatter";
 import FileItemIcon from "../assets/images/document-item.svg?react";
-import ImageIcon from "../assets/images/image-svgrepo-com.svg?react";
+import ImageItemIcon from "../assets/images/image-item.svg?react";
+import MediaItemIcon from "../assets/images/media-item.svg?react";
 
 function File({ item }) {
   return (
@@ -22,7 +23,13 @@ function File({ item }) {
             ...fileIconBgStyle,
           }}
         >
-          <FileItemIcon style={itemIconStyle} />
+          {isImageFile(item.name) ? (
+            <ImageItemIcon style={itemIconStyle} />
+          ) : isMediaFile(item.name) ? (
+            <MediaItemIcon style={itemIconStyle} />
+          ) : (
+            <FileItemIcon style={itemIconStyle} />
+          )}
         </div>
       </div>
 
@@ -46,3 +53,27 @@ function File({ item }) {
 }
 
 export default File;
+
+// Function to check if file is audio or video
+function isMediaFile(fileName) {
+  const mediaExtensions = [
+    "mp4",
+    "mkv",
+    "avi",
+    "mov",
+    "webm",
+    "mp3",
+    "wav",
+    "ogg",
+    "flac",
+  ];
+  const ext = fileName.split(".").pop().toLowerCase();
+  return mediaExtensions.includes(ext);
+}
+
+// Function to check if file is an image
+function isImageFile(fileName) {
+  const imageExtensions = ["jpg", "jpeg", "png", "gif", "bmp", "webp", "svg"];
+  const ext = fileName.split(".").pop().toLowerCase();
+  return imageExtensions.includes(ext);
+}
