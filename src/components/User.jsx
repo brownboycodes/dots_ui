@@ -39,7 +39,7 @@ function User({ item }) {
           <div style={itemNameStyle}>{item.name}</div>
         </div>
 
-        <div style={itemMetaStyle}>`Active ${getDateTime(item.lastSeen)}`</div>
+        <div style={itemMetaStyle}>Active {getDateTime(item.lastSeen)}</div>
       </div>
     </>
   );

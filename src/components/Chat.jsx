@@ -40,7 +40,7 @@ function Chat({ item }) {
         </div>
 
         <div style={itemMetaStyle}>
-          `${item.lastMessage} • ${getDateTime(item.lastMessageTime)}`
+          {item.lastMessage} • {getDateTime(item.lastMessageTime)}
         </div>
       </div>
     </>

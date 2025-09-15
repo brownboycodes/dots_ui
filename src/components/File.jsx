@@ -38,7 +38,7 @@ function File({ item }) {
         </div>
 
         <div style={itemMetaStyle}>
-          `in ${item.path} • ${getDateTime(item.lastEdited)}`
+          in {item.path} • {getDateTime(item.lastEdited)}
         </div>
       </div>
     </>

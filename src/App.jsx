@@ -1,11 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-
 import SettingsIcon from "./assets/images/settings-icon.svg?react";
 import AttachmentIcon from "./assets/images/file-icon.svg?react";
 import PersonIcon from "./assets/images/user-icon.svg?react";
 import ChatIcon from "./assets/images/chat-icon.svg?react";
 import ListIcon from "./assets/images/list-icon.svg?react";
-
 import "./App.css";
 import QuickAccess from "./components/QuickAccess";
 import ItemOptions from "./components/ItemOptions";
@@ -14,16 +12,9 @@ import UserModel from "./models/UserModel";
 import FileModel from "./models/FileModel";
 import FolderModel from "./models/FolderModel";
 import ChatModel from "./models/ChatModel";
-import { getDateTime } from "./utils/DateTimeFormatter";
 import ShimmerEffect from "./components/ShimmerLoader";
 import Cursor from "./components/Cursor";
 import CircularProgressIndicator from "./components/CircularProgressIndicator";
-import {
-  itemDetailsStyle,
-  itemIconContainerStyle,
-  itemMetaStyle,
-  itemNameStyle,
-} from "./styles/ItemStyles";
 import ListItem from "./components/ListItem";
 
 // Inline SVGs for the icons
@@ -238,7 +229,16 @@ const App = () => {
               ))}
 
               {/* Placeholder/Loading Skeleton */}
-              {(filteredData || []).length === 0 && <ShimmerEffect />}
+              {((filteredData || []).length === 0 || loading) &&
+                searchQuery.trim().length > 0 && (
+                  <>
+                    <div>
+                      {[...Array(3)].map(() => (
+                        <ShimmerEffect />
+                      ))}
+                    </div>
+                  </>
+                )}
             </div>
           )}
         </div>
@@ -300,8 +300,8 @@ const searchIconStyle = {
   position: "absolute",
   // left: "0.75rem",
   color: "#a3a3a3",
-  width: "1.25rem",
-  height: "1.25rem",
+  width: 36,
+  height: 36,
 };
 
 const clearBtnStyle = {
