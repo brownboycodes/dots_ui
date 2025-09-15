@@ -1,38 +1,4 @@
-import { useEffect, useRef, useState } from "react";
-
 function ItemOptions() {
-  const [toast, setToast] = useState({
-    isVisible: false,
-    message: "",
-    top: 0,
-    left: 0,
-  });
-  const buttonRef = useRef(null);
-
-  // Effect to hide the toast after a few seconds
-  useEffect(() => {
-    if (toast.isVisible) {
-      const timer = setTimeout(() => {
-        setToast({ ...toast, isVisible: false });
-      }, 3000); // 3 seconds
-
-      return () => clearTimeout(timer);
-    }
-  }, [toast.isVisible]);
-
-  // Function to show the toast
-  const showToast = (message) => {
-    if (buttonRef.current) {
-      const rect = buttonRef.current.getBoundingClientRect();
-      setToast({
-        isVisible: true,
-        message: message,
-        top: rect.top,
-        left: rect.left + rect.width / 2,
-      });
-    }
-  };
-
   const iconLinkStyle = {
     width: "18px",
     height: "18px",
@@ -75,70 +41,37 @@ function ItemOptions() {
   );
 
   return (
-    <>
-      <style>{`
-        @keyframes toast-in {
-          from {
-            transform: translate(-50%, 0) scale(0.9);
-            opacity: 0;
-          }
-          to {
-            transform: translate(-50%, -100%) scale(1);
-            opacity: 1;
-          }
-        }
-        .animate-toast-in {
-          animation: toast-in 0.3s ease-out forwards;
-        }
-      `}</style>
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap: "0.75rem",
+        marginLeft: "auto",
+      }}
+    >
       <div
         style={{
           display: "flex",
           alignItems: "center",
-          gap: "0.75rem",
-          marginLeft: "auto",
+          gap: "0.25rem",
+          cursor: "pointer",
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "0.25rem",
-            cursor: "none",
-          }}
-          ref={buttonRef}
-          onClick={() => showToast("Link copied!")}
-        >
-          <LinkIcon />
-          <span style={optionTextStyle}>Link</span>
-          {toast.isVisible && (
-            <div
-              className="absolute transform -translate-x-1/2 -translate-y-[calc(100%+1rem)] px-6 py-3 bg-gray-800 text-white rounded-lg shadow-lg transition-all duration-300 ease-out animate-toast-in z-50 whitespace-nowrap overflow-hidden"
-              style={{
-                top: toast.top,
-                left: toast.left,
-                minWidth: "200px", // Set a minimum width
-                maxWidth: "300px", // Set a maximum width
-                textOverflow: "ellipsis",
-              }}
-            >
-              {toast.message}
-            </div>
-          )}
-        </div>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "0.25rem",
-            cursor: "none",
-          }}
-        >
-          <NewTabIcon />
-          <span style={optionTextStyle}>New Tab</span>
-        </div>
+        <LinkIcon />
+        <span style={optionTextStyle}>Link</span>
       </div>
-    </>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "0.25rem",
+          cursor: "pointer",
+        }}
+      >
+        <NewTabIcon />
+        <span style={optionTextStyle}>New Tab</span>
+      </div>
+    </div>
   );
 }
 

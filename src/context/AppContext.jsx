@@ -104,23 +104,6 @@ export const AppProvider = ({ children }) => {
     return (filteredData[`${type}s`] || []).length;
   };
 
-  function getActiveStatusByKey(key) {
-    const foundItem = tabs.find((item) => item.key === key);
-    return foundItem ? foundItem.active : false;
-  }
-
-  function getUsersList() {
-    return getActiveStatusByKey(UserModel.type) ? data.users : [];
-  }
-  function getChatsList() {
-    return getActiveStatusByKey(ChatModel.type) ? data.chats : [];
-  }
-  function getFilesList() {
-    return getActiveStatusByKey(FileModel.type) ? data.files : [];
-  }
-  function getFoldersList() {
-    return getActiveStatusByKey(FolderModel.type) ? data.folders : [];
-  }
   const value = {
     loading,
     activeTab,
