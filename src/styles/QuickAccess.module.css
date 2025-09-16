@@ -36,6 +36,8 @@
   width: fit-content;
   cursor: none;
   transition: all 0.2s ease-in-out;
+  position: relative;
+  margin-right: 1.5rem;
 }
 
 .container:hover {
