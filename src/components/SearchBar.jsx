@@ -4,7 +4,8 @@ import QuickAccess from "./QuickAccess";
 import styles from "../styles/SearchBar.module.css";
 
 function SearchBar() {
-  const { searchQuery, setSearchQuery, loading } = useAppContext();
+  const { searchQuery, setSearchQuery, searching, filteredData } =
+    useAppContext();
 
   const SearchIcon = ({ className }) => (
     <svg
@@ -26,7 +27,11 @@ function SearchBar() {
 
   return (
     <div className={styles.searchContainer}>
-      {loading ? <CircularProgressIndicator /> : <SearchIcon />}
+      {searching || filteredData.length === 0 ? (
+        <CircularProgressIndicator />
+      ) : (
+        <SearchIcon />
+      )}
       <input
         type="text"
         className={styles.searchInput}

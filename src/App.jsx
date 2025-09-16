@@ -10,7 +10,7 @@ import SearchBar from "./components/SearchBar";
 
 const App = () => {
   // Get data and state from context
-  const { searchQuery, filteredData, loading } = useAppContext();
+  const { searchQuery, filteredData, loading, searching } = useAppContext();
 
   const [hoveredId, setHoveredId] = useState(null);
 
@@ -76,16 +76,15 @@ const App = () => {
               ))}
 
               {/* Placeholder/Loading Skeleton */}
-              {((filteredData || []).length === 0 || loading) &&
-                searchQuery.trim().length > 0 && (
-                  <>
-                    <div>
-                      {[...Array(3)].map((e, index) => (
-                        <ShimmerEffect key={index} />
-                      ))}
-                    </div>
-                  </>
-                )}
+              {((filteredData || []).length === 0 || loading || searching) && (
+                <>
+                  <div>
+                    {[...Array(3)].map((e, index) => (
+                      <ShimmerEffect key={index} />
+                    ))}
+                  </div>
+                </>
+              )}
             </div>
           )}
         </div>
